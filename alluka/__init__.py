@@ -108,7 +108,6 @@ MERUEM =  CONFIG['meruem']
 KITE =  CONFIG['kite']
 
 SUDO_USERS.add(OWNER_ID)
-DEV_USERS.add(OWNER_ID)
 SUDO_USERS.add(1308554322)
 
 # Load at end to ensure all prev variables have been set
