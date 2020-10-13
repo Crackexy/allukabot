@@ -68,10 +68,6 @@ try:
 except ValueError:
     raise Exception("Your support users list does not contain valid integers.")
 try:
-    DEV_USERS = set(int(x) for x in CONFIG['dev_users'] or [])
-except ValueError:
-    raise Exception("Your dev users list does not contain valid integers.")
-try:
     WHITELIST_USERS = set(int(x) for x in CONFIG['whitelist_users'] or [])
 except ValueError:
     raise Exception(
